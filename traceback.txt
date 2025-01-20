@@ -1,34 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 279, in script
-    python:
-  File "renpy/common/00start.rpy", line 283, in <module>
-    renpy.call_in_new_context("_main_menu")
-ScriptError: could not find label 'silly'.
+  File "game/unite.rpy", line 203, in script
+    jump game_menu
+ScriptError: could not find label 'game_menu'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 279, in script
-    python:
-  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00start.rpy", line 283, in <module>
-    renpy.call_in_new_context("_main_menu")
-  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\game.py", line 358, in call_in_new_context
-    return renpy.execution.run_context(False)
-  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\execution.py", line 955, in run_context
-    context.run()
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script call
     python hide:
+  File "game/unite.rpy", line 203, in script
+    jump game_menu
+  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\ast.py", line 1701, in execute
+    rv = renpy.game.script.lookup(target)
   File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\script.py", line 1103, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'silly'.
+ScriptError: could not find label 'game_menu'.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.3.24061702
 GASA4 fan game Beta
-Sat Jan 18 16:29:36 2025
+Sun Jan 19 17:07:44 2025

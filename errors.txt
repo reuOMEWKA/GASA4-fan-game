@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/unite.rpy", line 123: expected statement.
-    repeat
-          ^
+File "game/unite.rpy", line 203: expected statement.
+    Jump game_menu
+                  ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sat Jan 18 17:47:51 2025
+Sun Jan 19 17:07:20 2025
