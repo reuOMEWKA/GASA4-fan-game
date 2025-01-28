@@ -196,13 +196,6 @@ init:
 
 #лабел
 
-label test:
-    scene black
-    stop music
-    "1234"
-    jump game_menu
-return
-
 label splashscreen:
     scene beta
     with slowdissolve

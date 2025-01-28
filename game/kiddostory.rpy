@@ -329,7 +329,7 @@ label kidstory:
         show player puff:
             xzoom -1.0 yzoom 1.0
             linear 0.5 xpos 0.5
-        with sshake
+        with None
         show nooby angry_talk:
             right
             linear 0.3 xpos 0.9
@@ -364,6 +364,10 @@ label kidstory:
         scene fm_k
         "...{w=.3}но,{w=.15} к удивлению,{w=.15} мальчик в красной кепке подал голос,{w=.15} заставив своего брата перевести на него взгляд."
         scene fm_k_neutral
+        show nooby oh:
+            right
+            linear 0.3 xpos 0.9
+        with fastdissolve
         unknown "''Выглядит интересно.{w=.3} Не расскажешь,{w=.153} о чём она?''"
         "Вы заметно вздрогнули от неожиданности,{w=.15} что заметил подросток в худи.{w=.3} Не успев ничего ответить,{w=.15} в разговор вступил второй."
         unknown "''Опять ты людей пугаешь.''"

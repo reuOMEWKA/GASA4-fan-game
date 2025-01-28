@@ -41,7 +41,7 @@ define gui.hover_color = '#252a66'
 ## Цвет, используемый текстовой кнопкой, когда она выбрана, но не наведена.
 ## Кнопка может быть выбрана, если это текущий экран или текущее значение
 ## настройки.
-define gui.selected_color = '#3d456b'
+define gui.selected_color = '#586bca'
 
 ## Цвет, используемый текстовой кнопкой, когда она не может быть выбрана.
 define gui.insensitive_color = '#523a437f'
@@ -89,7 +89,7 @@ define gui.title_text_size = 75
 ## Главное и игровое меню. #####################################################
 
 ## Изображения, используемые в главном и игровом меню.
-define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_background = "gui/mainmenu.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -217,7 +217,7 @@ define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = '#171a3f'
-define gui.choice_button_text_hover_color = "#252a66"
+define gui.choice_button_text_hover_color = "#424cb5"
 define gui.choice_button_text_insensitive_color = '#171a3f'
 
 

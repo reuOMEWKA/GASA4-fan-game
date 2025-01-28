@@ -157,7 +157,7 @@ define config.save_directory = "GASA4fangame-1735635351"
 ##
 ## Иконка, показываемая на панели задач или на dock.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "gui/bloxy_cola.png"
 
 
 ## Настройка Дистрибутива ######################################################

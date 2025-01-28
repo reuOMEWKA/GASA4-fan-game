@@ -73,7 +73,7 @@ style vslider:
 
 style frame:
     padding gui.frame_borders.padding
-    background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+    background Frame("gui/frame1.png", gui.frame_borders, tile=gui.frame_tile)
 
 
 
@@ -136,7 +136,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/textbox1.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -448,7 +448,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background "gui/overlay/mainmenu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -564,7 +564,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    background "gui/overlay/gamemenu.png"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -624,8 +624,6 @@ screen about():
             text _("[config.version!t]\n")
 
             text _("{i}Особая благодарность бета-тестерам!{/i}")
-
-            textbutton _("test") xpos 80 ypos 80 action Call("test")
             
             imagebutton auto "images/beta_testers/sis_%s.png" xpos 80 ypos 80 focus_mask True action [Play("sound", "audio/quack.mp3")] hovered [ Play("sound", "audio/hovered.mp3")]
             imagebutton auto "images/beta_testers/l_%s.png" xpos 80 ypos 80 focus_mask True action [Play("sound", "audio/quack.mp3")] hovered [ Play("sound", "audio/hovered.mp3")]
@@ -1255,7 +1253,7 @@ style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background Frame([ "gui/confirm_frame.png", "gui/frame1.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
