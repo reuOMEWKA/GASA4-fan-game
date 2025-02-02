@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/unite.rpy", line 203: expected statement.
-    Jump game_menu
-                  ^
+File "game/kiddostory.rpy", line 464: expected simple expression
+    stop music fadeout
+                      ^
+
+File "game/kiddostory.rpy", line 499: choice menuitem expects a non-empty block.
+    "Вас притягивали приключения, в некотором роде.":
+                                                     ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sun Jan 19 17:07:20 2025
+Sun Feb  2 13:47:11 2025

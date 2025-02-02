@@ -1,24 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/unite.rpy", line 203, in script
-    jump game_menu
-ScriptError: could not find label 'game_menu'.
+  File "game/kiddostory.rpy", line 480, in script
+    scene fun_time_k with fade(1.0)
+TypeError: 'MultipleTransition' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script call
-    python hide:
-  File "game/unite.rpy", line 203, in script
-    jump game_menu
-  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\ast.py", line 1701, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'game_menu'.
+  File "game/kiddostory.rpy", line 480, in script
+    scene fun_time_k with fade(1.0)
+  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\ast.py", line 1363, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\exports.py", line 1782, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\display\core.py", line 1549, in do_with
+    return self.interact(trans_pause=True,
+  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\display\core.py", line 2609, in interact_core
+    trans = instantiate_transition(None, old_root, layers_root)
+  File "C:\Users\reuom\Desktop\renpy-8.2.3-sdk\renpy\display\core.py", line 2519, in instantiate_transition
+    trans = self.ongoing_transition[layer](
+TypeError: 'MultipleTransition' object is not callable
 
-Windows-10-10.0.22631 AMD64
+Windows-10-10.0.26100 AMD64
 Ren'Py 8.2.3.24061702
 GASA4 fan game Beta
-Sun Jan 19 17:07:44 2025
+Sun Feb  2 13:53:25 2025

@@ -36,6 +36,8 @@ define gui.about = _p("""
                       
     Text effects by {a=http://twitter.com/sodara9}sodara9{/a} ((Twitter))
 
+    OH MY GOODNESS, CAT PAWS?????? by {a=https://jamkats.itch.io/}JamKats{/a} ((itch.io))
+
 """)
 
 

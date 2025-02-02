@@ -312,7 +312,7 @@ screen navigation():
 
         textbutton _("Настройки") action ShowMenu("preferences")
         
-
+        textbutton _("Галерея") action ShowMenu("gallery")
 
 
 
@@ -396,6 +396,8 @@ screen main_menu():
         #textbutton _("Загрузить") action ShowMenu("load")
 
         imagebutton auto "gui/continue_%s.png" xpos 9 ypos 945 focus_mask True action [Play("sound", "audio/click.mp3"), ShowMenu("load")] hovered [ Play("sound", "audio/hovered.mp3")]
+
+        imagebutton auto "gui/gallery_%s.png" xpos 1526 ypos 0 focus_mask True action [Play("sound", "audio/click.mp3"), ShowMenu("gallery")] hovered [ Play("sound", "audio/hovered.mp3")]
 
         #textbutton _("Настройки") action ShowMenu("preferences")
         imagebutton auto "gui/options_%s.png" xpos 1468 ypos 945 focus_mask True action [Play("sound", "audio/click.mp3"), ShowMenu("preferences")] hovered [ Play("sound", "audio/hovered.mp3")]
@@ -546,6 +548,70 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
 
+screen gallery():
+
+    # Ensure this replaces the main menu.
+    tag menu
+
+    # The background.
+    add "gui/overlay/gamemenu.png"
+    use game_menu("Галерея")
+    imagebutton auto "images/buttons/kid_%s.png" xalign 0.3 yalign 0.5 focus_mask True action [Play("sound", "audio/click.mp3"), ShowMenu("kid_gallery")] hovered [ Play("sound", "audio/hovered.mp3")]
+    imagebutton auto "images/buttons/teen_%s.png" xalign 0.65 yalign 0.5 focus_mask True action [Play("sound", "audio/click.mp3"), ShowMenu("teen_gallery")] hovered [ Play("sound", "audio/hovered.mp3")]
+    imagebutton auto "images/buttons/adult_%s.png" xalign 1.0 yalign 0.5 focus_mask True action [Play("sound", "audio/click.mp3"), ShowMenu("adult_gallery")] hovered [ Play("sound", "audio/hovered.mp3")]
+
+screen teen_gallery():
+    tag menu
+
+    add "gui/overlay/gamemenu.png"
+
+    style_prefix "about"
+
+    use game_menu(_("{i}17-19 лет{/i}"), scroll="viewport"):
+        text "Ой! Кажется, здесь ничего нет. Попробуйте в следующем обновлении!"
+
+screen adult_gallery():
+    tag menu
+
+    add "gui/overlay/gamemenu.png"
+
+    style_prefix "about"
+
+    use game_menu(_("{i}25-30+ лет{/i}"), scroll="viewport"):
+        text "Ой! Кажется, здесь ничего нет. Попробуйте в следующем обновлении!"
+
+screen kid_gallery():
+
+    # Ensure this replaces the main menu.
+    tag menu
+
+    # The background.
+    add "gui/overlay/gamemenu.png"
+
+    style_prefix "about"
+
+    use game_menu(_("{i}7-14 лет{/i}"), scroll="viewport"):
+        vbox:
+            add g.make_button("1", "images/gallery/preview1.png", xalign=0.5, yalign=0.5, hover_border = "gui/button/hover.png")
+            text ("{i}Вступительная сцена.{/i}")
+            add g.make_button("2", "images/gallery/preview2.png", xalign=0.5, yalign=0.5, hover_border = "gui/button/hover.png", transition = "fade")
+            text ("{i}Игрушка.{/i}")
+            add g.make_button("3", "images/gallery/preview3.png", xalign=0.5, yalign=0.5, hover_border = "gui/button/hover.png", transition = "fade")
+            text ("{i}Книга.{/i}")
+            add g.make_button("4", "images/gallery/preview4.png", xalign=0.5, yalign=0.5, hover_border = "gui/button/hover.png", transition = "fade")
+            text ("{i}Приставка.{/i}")
+            add g.make_button("5", "images/gallery/preview5.png", xalign=0.5, yalign=0.5, hover_border = "gui/button/hover.png", transition = "fade")
+            text ("{i}После кошмара. Игрушка{/i}")
+            add g.make_button("6", "images/gallery/preview6.png", xalign=0.5, yalign=0.5, hover_border = "gui/button/hover.png", transition = "fade")
+            text ("{i}После кошмара. Книга.{/i}")
+            add g.make_button("7", "images/gallery/preview7.png", xalign=0.5, yalign=0.5, hover_border = "gui/button/hover.png", transition = "fade")
+            text ("{i}После кошмара. Приставка.{/i}")
+            add g.make_button("8", "images/gallery/preview8.png", xalign=0.5, yalign=0.5, hover_border = "gui/button/hover.png", transition = "fade")
+            text ("{i}Первая встреча.{/i}")
+            add g.make_button("9", "images/gallery/preview9.png", xalign=0.5, yalign=0.5, hover_border = "gui/button/hover.png", transition = "fade")
+            text ("{i}Коллекционер.{/i}")
+            add g.make_button("10", "images/gallery/preview10.png", xalign=0.5, yalign=0.5, hover_border = "gui/button/hover.png", transition = "fade")
+            text ("{i}Игроман.{/i}")
 
 style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
@@ -653,6 +719,8 @@ style about_label_text:
 ## file_slots.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#save 
+
+        
 
 screen save():
 

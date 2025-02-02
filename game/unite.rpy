@@ -53,6 +53,7 @@ screen info:
             text "Отношения"
             text "Плейер - [player_like]"
             text "Нуби - [nooby_like]"
+            text "Ты сам - [urself]"
 
 #звуки и музло
 define audio.ooo = "audio/music/ooo.mp3"
@@ -61,6 +62,7 @@ define audio.quiet_water = "audio/music/quiet_water.mp3"
 define audio.home = "audio/music/home.mp3"
 define audio.grillbs = "audio/music/grillb's.mp3"
 define audio.snowy = "audio/music/snowy.mp3"
+define audio.ruins = "audio/music/ruins.mp3"
 
 define audio.walk = "audio/sounds/walking.mp3"
 define audio.run = "audio/sounds/running.mp3"
@@ -98,6 +100,10 @@ define unknown = Character("???")
 
 #остальная херь
 define slowdissolve = Dissolve(1.0)
+
+define config.mouse ={}
+
+define config.mouse["default"] = [("gui/cursor/White-Cat-Paw.png", 0,0)]
 
 transform nar:
     xalign 0.5
@@ -187,9 +193,67 @@ init:
 default maxlove = 10
 default minlove = 0
 
+default urself = 0
 default nooby_like= 0 
 default player_like= 0 
 
+init python:
+    g = Gallery()
+    g.locked_button = "gui/button/locked.png"
+
+    g.button("1")
+    g.condition("persistent.beginning_k")
+    g.image("beginning_k")
+
+    g.button("2")
+    g.condition("persistent.s_k1")
+    g.image("s_k1")
+    g.condition("persistent.s_k2")
+    g.image("s_k2")
+
+    g.button("3")
+    g.condition("persistent.r_k1")
+    g.image("r_k1")
+    g.condition("persistent.r_k2")
+    g.image("r_k2")
+
+    g.button("4")
+    g.condition("persistent.p_k1")
+    g.image("p_k1")
+    g.condition("persistent.p_k2")
+    g.image("p_k2")
+
+    g.button("5")
+    g.condition("persistent.s_k3")
+    g.image("s_k3")
+
+    g.button("6")
+    g.condition("persistent.r_k3")
+    g.image("r_k3")
+
+    g.button("7")
+    g.condition("persistent.p_k3")
+    g.image("p_k3")
+
+    g.button("8")
+    g.condition("persistent.fm_k")
+    g.image("fm_k")
+    g.condition("persistent.fm_k1")
+    g.image("fm_k1")
+    g.condition("persistent.fm_k_neutral")
+    g.image("fm_k_neutral")
+
+    g.button("9")
+    g.condition("persistent.player1")
+    g.image("player1")
+    g.condition("persistent.player1_2")
+    g.image("player1_2")
+
+    g.button("10")
+    g.condition("persistent.nooby1")
+    g.image("nooby1")
+    g.condition("persistent.nooby1_2")
+    g.image("nooby1_2")
 
 init:
     $ sshake = Shake((0, 0, 0, 0), 1.0, dist=15)
@@ -199,5 +263,5 @@ init:
 label splashscreen:
     scene beta
     with slowdissolve
-    pause (2)
+    pause
     scene black with fade
